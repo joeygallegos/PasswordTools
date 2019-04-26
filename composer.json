@@ -31,7 +31,9 @@
 			"app/validation"
 		],
 		"files": [
-			"app/helpers.php"
+			"app/helpers.php",
+			"app/encryption.php",
+			"app/helpers/Google2FA.php"
 		]
 	}
 }
