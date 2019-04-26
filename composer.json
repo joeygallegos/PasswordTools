@@ -14,7 +14,7 @@
 		"respect/validation": "^1.1",
 		"ramsey/uuid": "^3.8",
 		"twig/twig": "^2.0",
-		"slim/slim": "^3.0",
+		"slim/slim": "3.0",
 		"slim/csrf": "^0.8.3",
 		"slim/php-view": "^2.2",
 		"slim/twig-view": "^2.4",
