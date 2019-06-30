@@ -1,20 +1,21 @@
 <?php
+use Slim\App;
+use Carbon\Carbon;
+use Slim\Http\Uri;
+use Monolog\Logger;
+use App\Models\Util;
+use Slim\Views\Twig;
+use Slim\Flash\Messages;
+use Slim\Http\Environment;
+use App\Models\CacheEngine;
+use App\Validation\Validator;
+use Slim\Views\TwigExtension;
+use Monolog\Handler\StreamHandler;
+use Monolog\Formatter\LineFormatter;
+use SecurityLib\Strength as Strength;
+use RandomLib\Factory as RandomFactory;
 use App\Middleware\PreserveInputMiddleware;
 use App\Middleware\ValidationErrorsMiddleware;
-use App\Models\CacheEngine;
-use App\Models\Util;
-use App\Validation\Validator;
-use Carbon\Carbon;
-use Monolog\Formatter\LineFormatter;
-use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
-use RandomLib\Factory as RandomFactory;
-use SecurityLib\Strength as Strength;
-use Slim\App;
-use Slim\Http\Environment;
-use Slim\Http\Uri;
-use Slim\Views\Twig;
-use Slim\Views\TwigExtension;
 
 // default settings
 $slimSettings = [];
@@ -45,6 +46,10 @@ $container['cacheLogger'] = function($container) {
 	
 	$logger->pushHandler($handler);
 	return $logger;
+};
+
+$container['flash'] = function($container) {
+	return new Messages();
 };
 
 // cache logger
