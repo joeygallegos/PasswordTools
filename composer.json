@@ -27,6 +27,7 @@
 	"autoload": {
 		"classmap": [
 			"app/controllers",
+			"app/traits",
 			"app/middleware",
 			"app/models",
 			"app/validation"
